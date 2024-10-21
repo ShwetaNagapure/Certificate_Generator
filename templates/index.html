@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate of Participation - CodeYolo2024</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .certificate {
+            background-color: #ffffff;
+            border: 2px solid #00FFFF;
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+            padding: 50px;
+            text-align: center;
+            width: 700px;
+            position: relative;
+            overflow: hidden;
+        }
+        .certificate::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, #00FFFF, #4ECDC4);
+            transform: rotate(45deg);
+            opacity: 0.1;
+        }
+        .certificate::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, #FF6B6B, #45B7D1);
+            transform: rotate(45deg);
+            opacity: 0.1;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: #FF6B6B;
+            font-size: 42px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+        }
+        h1::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background-color: #FF6B6B;
+            margin: 15px auto 0;
+        }
+        .recipient {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #4ECDC4;
+        }
+        #name {
+            border-bottom: 2px dashed #4ECDC4;
+            padding-bottom: 5px;
+        }
+        .description {
+            font-size: 20px;
+            margin-bottom: 40px;
+            color: #45B7D1;
+            line-height: 1.6;
+        }
+        .event-name {
+            font-weight: bold;
+            font-size: 24px;
+            color: #FF6B6B;
+            display: block;
+            margin-top: 10px;
+        }
+        .signature {
+            font-style: italic;
+            margin-top: 50px;
+        }
+        .signature img {
+            max-width: 180px;
+            margin-top: 15px;
+            opacity: 0.8;
+        }
+        .signature p {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #45B7D1;
+        }
+        .date {
+            margin-top: 30px;
+            color: #FF6B6B;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="certificate">
+        <h1>Certificate of Participation</h1>
+        <p class="recipient">This certifies that<br><span id="name">{{name}}</span></p>
+        <p class="description">has successfully participated in the<br><span class="event-name">CodeYolo2024</span></p>
+        <div class="signature">
+            <img src="{{url_for('static', filename='img/image.png')}}" alt="Organizer's Signature">
+            <p>TechWizard42<br>Organizer's Signature</p>
+        </div>
+        <p class="date">October 21, 2024</p>
+    </div>
+</body>
+</html>
